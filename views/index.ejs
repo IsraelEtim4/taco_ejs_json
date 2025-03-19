@@ -30,9 +30,15 @@
           <%= recipe.ingredients.protein.preparation %>
         </li>
          <li>
-          <%= recipe.ingredients.Salsa.name %>
+          <%= recipe.ingredients.salsa.name %>
          </li>
-         <li>Every other topping</li>
+         <li>
+            <% recipe.ingredients.toppings.forEach(topping=> { %>
+            <li>
+              <%= topping.quantity %> of <%= topping.name %>
+            </li>
+            <% }) %>
+         </li>
        </ul>
      <% } else { %>
       <h2>Pick your favourite taco ingredient 👆</h2>
